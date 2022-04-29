@@ -1,0 +1,32 @@
+header{
+	max-width: 1900px;
+	text-align: center;
+	font-size: 24px;
+	background: #00E60B;
+}
+p{
+	font-size: 24px;
+}
+.main{
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 35px;
+}
+.number{
+	margin-top: 35px;
+	margin-bottom: 35px;
+}
+.checkbox{
+	margin-bottom: 35px;
+}
+.button{
+	margin-bottom: 35px;
+}
+button{
+	width: 100px;
+	background: #00E60B;
+	color: #fff;
+}
+button:hover{
+	box-shadow: inset 0 0 10px #2C332E;
+}

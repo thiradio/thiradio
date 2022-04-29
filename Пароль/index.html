@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>password generation</title>
+</head>
+<body>
+	<header>Password generation</header>
+	<div class="main">
+		<p>Characters</p>
+		<div class="number">
+
+			<input type="number" id="characters">
+		</div>
+		<div class="checkbox">
+			<input type="checkbox" id="numbers">
+			<label for="numbers">Numbers</label>
+			<input type="checkbox" id="letters">
+			<label for="letters">Letters</label>
+			<input type="checkbox" id="symbols">
+			<label for="symbols">Symbols</label>
+		</div>
+		<div class="button">
+		<button id="button">Go</button>
+		</div>
+		<div>
+			Your password
+		<input type="text" id="password">
+		</div>
+	</div>
+	<script>
+
+
+		function getPassword(len, symbols, numbers, letters){
+			let result = ""
+			let num = "0123456789"
+			let abc = "abcdefghijklmnopqrstuvwxyz"
+			let simb = "!@#$^&*"
+			let all = ''
+			if(symbols) all += simb
+			if(letters) all += abc
+			if(numbers) all += num
+
+			if(all == ''){
+				return 'Error!'
+			}
+
+			for (let i = 0; i < len; i++){
+				let random = Math.floor(Math.random() * all.length)
+				result+=all[random]
+			}
+			return result
+		}
+
+		let b = document.querySelector('#button')
+		b.onclick = function(event){
+			let c = document.getElementById('characters')
+			let len1 = c.value
+			let numb = document.getElementById('numbers').checked
+			let lete = document.getElementById('letters').checked
+			let sym = document.getElementById('symbols').checked		
+			document.getElementById('password').value=(getPassword(len1, sym, numb, lete))
+		}
+
+
+	</script>
+</body>
+</html>
